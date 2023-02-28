@@ -5,7 +5,7 @@ services:
     restart: always
     environment:
       POSTGRES_DB: ${{ env.ZAO_CHAT_DB }}
-      POSTGRES_PASSWORD: ${{ env.DB_PASSWORD }}
+      POSTGRES_PASSWORD: ${{ secrets.REST_DB_SECRET }}
   app:
     build: app
     depends_on: [database]
@@ -14,4 +14,4 @@ services:
     ports:
       - "5000:5000"
     environment:
-      SQLALCHEMY_DATABASE_URI: ${{ env.PYTHON_DATABASE_REST_API }}
+      SQLALCHEMY_DATABASE_URI: ${{ env.ZAO_CHAT_DB }}
