@@ -14,6 +14,10 @@ def api_get():
     users = user_service.get()
     return jsonify([user.as_dict() for user in users])
 
+@api.route('/', methods=['GET'])
+def api_get_health():
+    return 'hello world'    
+
 @api.route('/users', methods=['POST'])
 def api_post():
     ''' Create entity'''

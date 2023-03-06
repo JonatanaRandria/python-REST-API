@@ -1,1 +1,1 @@
-SQLALCHEMY_DATABASE_URI: ${{ env.PYTHON_DATABASE_REST_API }}
+SQLALCHEMY_DATABASE_URI: "postgresql://localhost:5432/zao_chat"
