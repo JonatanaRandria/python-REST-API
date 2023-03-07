@@ -20,7 +20,9 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and tag Docker image
-      run: docker build -t ashton14/zao-chat-api .
+      run: |
+        cd app/
+        docker build -t ashton14/zao-chat-api .
 
     - name: Push Docker image to DockerHub
       run: docker push ashton14/zao-chat-api
