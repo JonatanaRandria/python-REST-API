@@ -23,9 +23,6 @@ def api_post():
     ''' Create entity'''
     user = user_service.post(request.json)
     return jsonify(user.as_dict())
-@api.route('/user',methods=['GET'])
-def api_get_health():
-    return 'hey,more keyboard'
 @api.route('/users/<string:id>', methods=['PUT'])
 def api_put(id):
     ''' Update entity by id'''
